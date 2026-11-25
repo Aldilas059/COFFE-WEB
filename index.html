@@ -138,31 +138,142 @@
             </div>
         </div>
 
-        <!-- About -->
-        <div id="about" class="container text-center py-5">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">ABOUT US</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+        <!-- About (Coffee Shop) — styles: assets/css/about.css · script: assets/js/about.js · photos: assets/img/about/ (Unsplash License) -->
+        <link rel="stylesheet" href="assets/css/about.css?v=5">
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="ab-wrap">
+
+                    <!-- ===== Intro ===== -->
+                    <div class="row align-items-center g-5 ab-intro">
+                        <!-- Photo collage -->
+                        <div class="col-lg-6">
+                            <div class="ab-collage">
+                                <figure class="ab-photo ab-photo-main ab-reveal-img">
+                                    <img src="assets/img/about/latte.jpg" alt="Latte art served on a wooden table among plants" loading="lazy" data-ab-speed="-0.06">
+                                </figure>
+                                <figure class="ab-photo ab-photo-sub ab-reveal-img">
+                                    <img src="assets/img/about/barista.jpg" alt="Barista preparing a pour-over coffee" loading="lazy" data-ab-speed="0.05">
+                                </figure>
+
+                                <div class="ab-exp ab-reveal">
+                                    <span class="ab-exp-num" data-count="9">0</span>
+                                    <span class="ab-exp-txt">Years of<br>Brewing</span>
+                                </div>
+
+                                <div class="ab-seal" aria-hidden="true">
+                                    <svg viewBox="0 0 200 200">
+                                        <defs><path id="abSeal" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+                                        <text><textPath href="#abSeal" textLength="462" lengthAdjust="spacing">SPECIALTY COFFEE ✦ ROASTED IN-HOUSE ✦ </textPath></text>
+                                    </svg>
+                                    <i class="bi bi-cup-hot-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Story -->
+                        <div class="col-lg-6">
+                            <span class="ab-eyebrow ab-reveal">About Us</span>
+                            <h2 class="ab-title" data-ab-split>Crafted with passion, <em>served with soul.</em></h2>
+                            <p class="ab-lead ab-reveal">We are a specialty coffee house built on one simple belief: great coffee brings people together. Every bean we serve is ethically sourced, roasted in small batches in our own roastery and brewed by baristas who truly care about the craft.</p>
+
+                            <blockquote class="ab-quote ab-reveal">
+                                <p>“Every cup tells the story of the hands that grew, roasted and poured it.”</p>
+                                <footer>The Founder &amp; Head Roaster</footer>
+                            </blockquote>
+
+                            <ul class="ab-points">
+                                <li class="ab-reveal"><i class="bi bi-check2"></i>Single-origin &amp; direct-trade beans</li>
+                                <li class="ab-reveal"><i class="bi bi-check2"></i>Roasted fresh every single week</li>
+                                <li class="ab-reveal"><i class="bi bi-check2"></i>Certified, award-winning baristas</li>
+                                <li class="ab-reveal"><i class="bi bi-check2"></i>Homemade pastries &amp; desserts</li>
+                            </ul>
+
+                            <div class="ab-actions ab-reveal">
+                                <a href="#contact" class="ab-btn">Visit Our Café <i class="bi bi-arrow-up-right"></i></a>
+                                <div class="ab-hours">
+                                    <i class="bi bi-clock"></i>
+                                    <span><strong>Open Daily</strong>07:00 AM – 11:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="row align-items-center text-start g-5 py-4">
-                <div class="col-lg-5">
-                    <img src="assets/img/about.svg" class="d-block mx-lg-auto img-fluid" alt="Digital Creative" loading="lazy">
-                </div>
-                <div class="col-lg-7">
-                    <h4 class="fw-bold lh-2 mb-3">Creative Digital Agency For Your Business Solutions</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <ul>
-                        <li>First list item</li>
-                        <li>Second list item with a longer description</li>
-                        <li>Third list item to close it out</li>
-                    </ul>
-                    <p>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+            <!-- ===== Marquee ===== -->
+            <div class="ab-marquee" aria-hidden="true">
+                <div class="ab-marquee-track">
+                    <span>Espresso</span><i>✦</i><span>Cappuccino</span><i>✦</i><span>Flat White</span><i>✦</i><span>Cold Brew</span><i>✦</i><span>Pour Over</span><i>✦</i><span>Mocha</span><i>✦</i>
+                    <span>Espresso</span><i>✦</i><span>Cappuccino</span><i>✦</i><span>Flat White</span><i>✦</i><span>Cold Brew</span><i>✦</i><span>Pour Over</span><i>✦</i><span>Mocha</span><i>✦</i>
                 </div>
             </div>
-        </div>
+
+            <div class="container">
+                <!-- ===== Stats band ===== -->
+                <div class="ab-band ab-reveal">
+                    <div class="ab-band-bg" style="background-image:url('assets/img/about/interior.jpg')" data-ab-speed="-0.08"></div>
+                    <div class="ab-band-inner">
+                        <div class="ab-band-head">
+                            <span class="ab-eyebrow ab-eyebrow-light">Our Numbers</span>
+                            <h3>A neighbourhood favourite, one cup at a time.</h3>
+                        </div>
+                        <div class="ab-stats">
+                            <div class="ab-stat"><span class="ab-num" data-count="12" data-suffix="+">0</span><span class="ab-label">Bean Origins</span></div>
+                            <div class="ab-stat"><span class="ab-num" data-count="50" data-suffix="K+">0</span><span class="ab-label">Cups Served</span></div>
+                            <div class="ab-stat"><span class="ab-num" data-count="25" data-suffix="">0</span><span class="ab-label">Signature Drinks</span></div>
+                            <div class="ab-stat"><span class="ab-num" data-count="4.9" data-decimals="1" data-suffix="">0</span><span class="ab-label">Guest Rating</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== From bean to cup ===== -->
+                <div class="ab-process-head">
+                    <div>
+                        <span class="ab-eyebrow ab-reveal">Our Process</span>
+                        <h3 class="ab-title ab-title-sm" data-ab-split>From bean <em>to cup.</em></h3>
+                    </div>
+                    <p class="ab-reveal">Four careful steps stand between a coffee cherry and the cup in your hands. We never skip a single one.</p>
+                </div>
+
+                <div class="ab-process">
+                    <article class="ab-card ab-reveal">
+                        <img src="assets/img/about/beans.jpg" alt="Freshly roasted coffee beans" loading="lazy">
+                        <div class="ab-card-body">
+                            <span class="ab-card-no">01</span>
+                            <h4>Source</h4>
+                            <p>Hand-picked beans from high-altitude farms we partner with directly.</p>
+                        </div>
+                    </article>
+                    <article class="ab-card ab-reveal">
+                        <img src="assets/img/about/roast.jpg" alt="Ground coffee and espresso tools on wood" loading="lazy">
+                        <div class="ab-card-body">
+                            <span class="ab-card-no">02</span>
+                            <h4>Roast</h4>
+                            <p>Small-batch roasting profiles designed to unlock every origin's notes.</p>
+                        </div>
+                    </article>
+                    <article class="ab-card ab-reveal">
+                        <img src="assets/img/about/brew.jpg" alt="Espresso portafilters with beans, grounds and latte" loading="lazy">
+                        <div class="ab-card-body">
+                            <span class="ab-card-no">03</span>
+                            <h4>Brew</h4>
+                            <p>Precise grind, dose and extraction, dialled in every morning.</p>
+                        </div>
+                    </article>
+                    <article class="ab-card ab-reveal">
+                        <img src="assets/img/about/enjoy.jpg" alt="Friends toasting with two latte cups" loading="lazy">
+                        <div class="ab-card-body">
+                            <span class="ab-card-no">04</span>
+                            <h4>Share</h4>
+                            <p>Served warm, with a smile, in a space made for good conversations.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <script src="assets/js/about.js?v=5" defer></script>
+        <!-- /About -->
 
         <!-- Portfolio -->
         <div id="portfolio" class="container text-center py-5">
