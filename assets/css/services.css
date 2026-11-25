@@ -1,0 +1,171 @@
+/* =========================================================
+   OUR SERVICES — Coffee Shop
+   Every rule is scoped to #services so other sections are untouched.
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
+
+#services {
+  --sv-espresso: #1b120d;
+  --sv-roast: #2a1b13;
+  --sv-caramel: #b87333;
+  --sv-gold: #d9a566;
+  --sv-paper: #fffaf4;
+  --sv-muted: rgba(255, 250, 244, .72);
+  --sv-line: rgba(217, 165, 102, .18);
+  --sv-ease: cubic-bezier(.22, 1, .36, 1);
+  --sv-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: radial-gradient(ellipse at top, #3a2519 0%, var(--sv-espresso) 65%);
+  color: var(--sv-paper);
+  scroll-margin-top: 80px;
+}
+
+/* ---------- Heading ---------- */
+#services .sv-head {
+  max-width: 660px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+#services .sv-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--sv-gold);
+}
+#services .sv-eyebrow::before,
+#services .sv-eyebrow::after {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+}
+#services .sv-title {
+  margin: 1rem 0 1.2rem;
+  font-family: var(--sv-serif);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  line-height: 1.12;
+}
+#services .sv-title em {
+  font-weight: 500;
+  color: var(--sv-gold);
+}
+#services .sv-lead {
+  margin: 0;
+  line-height: 1.85;
+  color: var(--sv-muted);
+}
+
+/* ---------- Cards ---------- */
+#services .sv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+#services .sv-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--sv-line);
+  border-radius: 18px;
+  background: var(--sv-roast);
+  transition: border-color .4s, box-shadow .5s var(--sv-ease), translate .5s var(--sv-ease);
+}
+#services .sv-card:hover,
+#services .sv-card:focus-within {
+  translate: 0 -8px;
+  border-color: var(--sv-caramel);
+  box-shadow: 0 30px 50px -25px rgba(0, 0, 0, .75);
+}
+#services .sv-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+#services .sv-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--sv-ease);
+}
+#services .sv-card:hover .sv-media img { transform: scale(1.08); }
+
+#services .sv-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1.6rem 1.6rem;
+}
+#services .sv-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 1.1rem;
+  border: 4px solid var(--sv-roast);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: var(--sv-paper);
+  background: var(--sv-caramel);
+  transition: transform .6s var(--sv-ease);
+}
+#services .sv-card:hover .sv-icon { transform: rotate(-12deg) scale(1.08); }
+#services .sv-card h3 {
+  margin-bottom: .6rem;
+  font-family: var(--sv-serif);
+  font-size: 1.45rem;
+}
+#services .sv-card p {
+  margin-bottom: 1.3rem;
+  font-size: .95rem;
+  line-height: 1.75;
+  color: var(--sv-muted);
+}
+#services .sv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: auto;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--sv-gold);
+}
+#services .sv-link:hover { color: var(--sv-paper); }
+#services .sv-link i { transition: transform .4s var(--sv-ease); }
+#services .sv-link:hover i { transform: translateX(5px); }
+
+/* ---------- Scroll reveal (only when services.js is running) ---------- */
+#services.sv-js .sv-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .9s var(--sv-ease), transform .9s var(--sv-ease),
+              border-color .4s, box-shadow .5s var(--sv-ease), translate .5s var(--sv-ease);
+}
+#services.sv-js .sv-reveal.sv-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  #services .sv-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575.98px) {
+  #services .sv-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  #services * { transition: none !important; }
+  #services.sv-js .sv-reveal { opacity: 1; transform: none; transition: none; }
+}
