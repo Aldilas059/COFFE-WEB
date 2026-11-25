@@ -276,89 +276,138 @@
         <!-- /About -->
 
         <!-- Portfolio -->
+        <!--
+  BAGIAN PORTFOLIO (tema coffee shop)
+  Ada 3 bagian. Tempel masing-masing di file index.html kamu:
+
+  1) CSS  -> tempel di dalam <style> di <head> (atau di assets/css/style.css, tanpa tag <style>)
+  2) HTML -> tempel menggantikan section "Portfolio" yang lama, di dalam <main>
+  3) JS   -> tempel sebelum </body>, setelah script Bootstrap
+-->
+
+
+<!-- ============ 1) CSS ============ -->
+<style>
+        /* Variabel warna (hapus kalau sudah ada di file kamu) */
+        :root {
+            --espresso: #2b1a12;
+            --roast: #4a2c1d;
+            --caramel: #c68642;
+            --oat: #f3e9dc;
+        }
+
+        /* Portfolio + animasi scroll */
+        .porto-card { border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 6px 22px rgba(74, 44, 29, .1); }
+        .porto-img { overflow: hidden; aspect-ratio: 4 / 3; background: var(--oat); }
+        .porto-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+        .porto-card:hover .porto-img img { transform: scale(1.08); }
+        .porto-card .tag { display: inline-block; font-size: .8rem; font-weight: 700; color: var(--caramel); margin-bottom: .25rem; }
+        .porto-card h5 { margin-bottom: .35rem; }
+        .porto-card p { color: #6b5445; margin-bottom: 0; }
+
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(36px) scale(.98); transition: opacity .8s ease, transform .8s cubic-bezier(.2, .7, .2, 1); }
+        .reveal.show { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+</style>
+
+
+<!-- ============ 2) HTML ============ -->
+        <!-- Portfolio -->
         <div id="portfolio" class="container text-center py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h3 class="fw-bold lh-2 mb-3">OUR PORTFOLIO</h3>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+                    <h3 class="fw-bold lh-2 mb-3">Our portfolio</h3>
+                    <p class="lead">Sebagian menu andalan dan sudut favorit di Kopi Senja.</p>
                 </div>
             </div>
 
             <div class="row text-start py-4">
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-kasir-jasa-cuci-mobil-dan-motor" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-kasir-jasa-cuci-mobil-dan-motor.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Kasir Jasa Cuci Mobil dan Motor</p>
+                <div class="col-lg-4 col-md-6 mb-4 reveal">
+                    <div class="porto-card h-100">
+                        <div class="porto-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=70" alt="Signature latte" loading="lazy"></div>
+                        <div class="p-4">
+                            <span class="tag">Signature</span>
+                            <h5>Senja Latte</h5>
+                            <p>Espresso, susu segar, dan gula aren dengan latte art khas kami.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-manajemen-keuangan-pribadi-single-user" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-manajemen-keuangan-pribadi-single-user.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">DompetKu - Aplikasi Manajemen Keuangan Pribadi (Single User)</p>
+                <div class="col-lg-4 col-md-6 mb-4 reveal" style="transition-delay: .12s;">
+                    <div class="porto-card h-100">
+                        <div class="porto-img"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=70" alt="Biji kopi dan secangkir kopi" loading="lazy"></div>
+                        <div class="p-4">
+                            <span class="tag">Single origin</span>
+                            <h5>Biji Kopi Pilihan</h5>
+                            <p>Disangrai medium, dijual per 200 gram untuk diseduh di rumah.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-manajemen-kas-berbasis-web" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-manajemen-kas-berbasis-web.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Manajemen Kas Berbasis Web</p>
+                <div class="col-lg-4 col-md-6 mb-4 reveal" style="transition-delay: .24s;">
+                    <div class="porto-card h-100">
+                        <div class="porto-img"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=70" alt="Cappuccino dengan latte art" loading="lazy"></div>
+                        <div class="p-4">
+                            <span class="tag">Classic</span>
+                            <h5>Cappuccino</h5>
+                            <p>Busa susu lembut dengan rasa espresso yang kuat dan seimbang.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-kasir-penjualan-pulsa" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-kasir-penjualan-pulsa.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Kasir Penjualan Pulsa</p>
+                <div class="col-lg-4 col-md-6 mb-4 reveal">
+                    <div class="porto-card h-100">
+                        <div class="porto-img"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=70" alt="Interior coffee shop" loading="lazy"></div>
+                        <div class="p-4">
+                            <span class="tag">Interior</span>
+                            <h5>Main Hall</h5>
+                            <p>Ruang utama dengan kursi kayu hangat dan cahaya yang lembut.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-aplikasi-pengelolaan-arsip-surat" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-aplikasi-pengelolaan-arsip-surat.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Aplikasi Pengelolaan Arsip Surat</p>
+                <div class="col-lg-4 col-md-6 mb-4 reveal" style="transition-delay: .12s;">
+                    <div class="porto-card h-100">
+                        <div class="porto-img"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=70" alt="Sudut kafe dengan kursi" loading="lazy"></div>
+                        <div class="p-4">
+                            <span class="tag">Cozy corner</span>
+                            <h5>Reading Corner</h5>
+                            <p>Sudut tenang untuk membaca, bekerja, atau sekadar melamun.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card h-100 border-0 rounded-4 shadow-sm">
-                        <div class="card-body p-4 pb-0">
-                            <div class="mb-3">
-                                <a href="https://pustakakoding.com/project-php-detail-sistem-informasi-persediaan-barang-gudang-material" target="_blank">
-                                    <img src="assets/img/portfolio/pustakakoding-sistem-informasi-persediaan-barang-gudang-material.jpg" alt="Portfolio" class="card-img-top img-fluid rounded-4">
-                                </a>
-                            </div>
-                            <p class="fw-semibold">Sistem Informasi Persediaan Barang Gudang Material</p>
+                <div class="col-lg-4 col-md-6 mb-4 reveal" style="transition-delay: .24s;">
+                    <div class="porto-card h-100">
+                        <div class="porto-img"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=70" alt="Kopi yang sedang diseduh" loading="lazy"></div>
+                        <div class="p-4">
+                            <span class="tag">Manual brew</span>
+                            <h5>V60 Pour Over</h5>
+                            <p>Diseduh perlahan untuk rasa yang bersih dan aroma yang jelas.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+<!-- ============ 3) JS ============ -->
+<script>
+        (function () {
+            var items = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                items.forEach(function (el) { el.classList.add('show'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('show');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            items.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
 
         <!-- Contact -->
         <div id="contact" class="container text-center pt-4 pb-5">
